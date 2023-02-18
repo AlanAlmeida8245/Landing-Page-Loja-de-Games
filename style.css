@@ -187,6 +187,15 @@ nav{
     
 }
 
+@media  screen and (max-width: 508px) {
+    
+    .depoimentos-cards{
+        
+        width: 60em;
+    
+    }
+}
+
 .toggle .line1{
     transform: rotate(-45deg) translate(-5px,6px);
 }
@@ -458,7 +467,9 @@ hr{
 .depoimentos-container{
     display: flex;
     justify-content: center;
-    margin: 10em;
+ 
+    flex-wrap: wrap;
+    width: 100%;
 
 }
 .depoimentos-cards{
