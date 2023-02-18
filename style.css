@@ -1,0 +1,489 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;600&family=Rubik:ital@1&display=swap');
+
+
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+   
+    background-image: linear-gradient(to left, rgb(52, 45, 65), rgb(32, 31, 32));
+}
+
+nav{
+    height: 6rem;
+    width: 100%;
+    background-color: transparent;
+    
+    display: flex;
+    
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: white;
+    font-family: "Poppins";
+}
+.nav-links li a:hover {
+    color: white;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: crimson;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button{
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+
+}
+.login-button:hover {
+    color: #131418;
+    background-color: #f2f5f7;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+.join-button{
+    color: #131418;
+    background-color: #61DAFB;
+    border: 1.5px solid #61DAFB;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+
+@media screen and (max-width: 800px){
+
+    .logo img{
+        display: none;
+    }
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+
+    
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+h1{
+    font-family: 'Inter', sans-serif;
+    margin: 15px;
+}
+
+
+header{
+   
+    background-image: linear-gradient(to left, transparent 10%, #000000 80%), url(imagens/hogwarts.jpg);
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25em;
+
+}
+
+.logo-hogwarts{
+    width: 40%;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: right;
+    min-width: 16em;
+    z-index: 0;
+}
+
+
+.btn{
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 10em;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 4em;
+    transition: 0.5s;
+}
+.btn:hover{
+    scale: 1.1;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 12%;
+    
+}
+
+.info-jogo{
+    position: absolute;
+  
+}
+
+.releases{
+    padding: 10px;
+}
+.welcome-container .releases .coming{
+    margin-top: -13px;
+    width: 100%;
+    background-image: linear-gradient(to left, rgb(52, 45, 65), rgb(32, 31, 32));
+}
+.welcome-container{
+    display: grid;
+    justify-content: center;
+
+}
+.gallery-releases
+{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+.gallery-releases img{
+    flex: 1 1 30em;
+    min-width: 0;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: 0.5s;
+    margin: 10px;
+}
+.gallery-releases img:hover{
+    flex: 1 1 50em;
+    opacity: 1;
+    border: 1px solid crimson;
+}
+
+.welcome-container  h1, .releases h1, .coming h1 {
+
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+.welcome-container{
+    margin: 5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    justify-content: center;
+    grid-gap: 2em;
+}
+
+
+.cards-plataforms{
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+
+
+.ps-banner{
+    width: 100%;
+   margin-top: 10em;
+   border: 2px solid lightblue;
+}
+.xbox-banner{
+    width: 100%;
+    border: 2px solid lightgreen;
+}
+.nintendo-banner{
+    width: 100%;
+    border: 2px solid red;
+}
+
+.card-container img{
+    width: 95%;
+    margin-top: 10px;
+    align-items: center;
+
+   
+}
+.card-container h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-container{
+    display: flex;
+    width: 90%;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+   
+}
+
+.btn-comprar{
+    padding: 10px;
+    margin: 10px;
+    background-color: transparent;
+    color: crimson;
+    border: 1px solid crimson;
+    width: 10em;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.btn-comprar:hover{
+    scale: 1.1;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.btn-carrinho{
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    color:  black;
+    width: 10em;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.btn-carrinho:hover{
+    scale: 1.1;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn-groups{
+    margin-top: 10px;
+}
+.btn-groups h2{
+    color: white;
+    padding: 5px;
+}
+.btn-groups h3{
+    color: lightgreen;
+    font-family: "poppins";
+}
+
+hr{
+    width: 20%;
+    margin: 0 auto;
+}
+.coming hr{
+    width: 5em;
+}
+#playstation div{
+    width: 10em;
+    height: 0.1em;
+    background: lightblue;
+    margin: 0 auto;
+}
+
+#xbox div{
+    width: 10em;
+    height: 0.1em;
+    background: lightgreen;
+    margin: 0 auto;
+}
+
+#nintendo div{
+    width: 10em;
+    height: 0.1em;
+    background: red;
+    margin: 0 auto;
+}
+
+.card .image-logo{
+    width: 10em;
+    z-index: 0;
+    position: absolute;
+    overflow-x: hidden;
+    opacity:20%;
+}
+
+.card h1{
+    position: absolute;
+    z-index: 0;
+    padding-top: 20px;
+   
+}
+.card p{
+    font-weight: bold;
+}
+
+#playstation p{
+    color: lightblue;
+    font-family: "inter";
+    padding: 10px;
+}
+#xbox p{
+    color: lightgreen;
+    font-family: "inter";
+    padding: 10px;
+}
+#nintendo p{
+    color: rgb(255, 19, 19);
+    font-family: "inter";
+    padding: 10px;
+}
+
+.card-game img{
+    width: 20em;
+   border-radius: 10px;
+}
+
+.depoimentos-container{
+    display: flex;
+    justify-content: center;
+    margin: 10em;
+
+}
+.depoimentos-cards{
+    background: #f2f5f7;
+    width: 25em;
+    border-radius: 10px;
+    font-family: "Inter", sans-serif;
+    margin: 5px;
+    padding: 10px;
+    
+}
+.info-depoimentos{
+  text-align: center;
+}
+.info-depoimentos span{
+    color: crimson;
+  
+    font-weight: bold;
+}
+.depoimentos-cards img{
+    width: 70px;
+    border-radius: 50%;
+}
+.imagem-profile{
+    display: flex;
+    justify-content: center;
+}
+
